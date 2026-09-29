@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ea-mel"
+version = "0.1.0"
+description = "Web de equipo (MEL) de Efecto Áncash — programación y reportes"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Cristofher Rodriguez Atilano" }]
+keywords = ["mel", "educacion", "efecto-ancash", "dashboard"]
+dependencies = [
+  "fastapi>=0.111,<0.116",
+  "uvicorn[standard]>=0.30,<0.35",
+  "psycopg2-binary>=2.9,<3",
+  "python-dotenv>=1.0,<2",
+]
+
+[project.optional-dependencies]
+dev = ["watchfiles"]
+
+[project.scripts]
+eamel = "ea_mel.cli:main"
+
+[tool.setuptools]
+packages = ["ea_mel"]
+
+[tool.setuptools.package-data]
+ea_mel = ["web/*", "web/css/*", "web/js/*"]

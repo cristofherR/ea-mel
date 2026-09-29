@@ -1,0 +1,10 @@
+# docker compose up -d   →  http://localhost:8080
+services:
+  ea-mel:
+    build: .
+    container_name: ea-mel
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    restart: unless-stopped

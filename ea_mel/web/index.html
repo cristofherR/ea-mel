@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EA Spacework · Efecto Áncash</title>
+
+<!-- PWA: instalable / acceso directo en el teléfono -->
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#1f3460">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="EA Spacework">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="icon" href="/icon-192.png">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta name="app-version" content="0.2.0">
+
+<link rel="stylesheet" href="/css/app.css?v=3">
+
+<script>
+/* Muestra cualquier error en pantalla (en vez de quedarse en blanco) */
+window.addEventListener('error', function (ev) {
+  var v = document.getElementById('view');
+  if (v) v.innerHTML = '<div class="empty">⚠️ Error al cargar la app:<br>' +
+    (ev.message || 'desconocido') + '<br><br>Recarga con <b>Ctrl+F5</b> (o limpia caché) y avísame.</div>';
+});
+</script>
+</head>
+<body>
+<div class="phone"><div class="screen">
+
+  <header class="hdr">
+    <button class="back" id="btnBack" hidden>&lsaquo;</button>
+    <div class="htxt">
+      <div class="t1" id="hTitle">EA Spacework</div>
+      <div class="t2" id="hSub">Efecto Áncash · v0.2</div>
+    </div>
+    <div class="hestado" id="hUser" title="sesión"></div>
+  </header>
+
+  <main class="wrap" id="view"><div class="loading">Cargando…</div></main>
+
+  <nav class="nav" id="nav"></nav>
+</div></div>
+
+<div class="toast" id="toast" hidden></div>
+
+<div class="sheet-ov" id="sheetOv" hidden>
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<script src="/js/app.js?v=3"></script>
+</body>
+</html>
